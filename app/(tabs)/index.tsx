@@ -15,6 +15,7 @@ import AIStyleAssistant from '@/components/AIStyleAssistant';
 import CollaborationHub from '@/components/CollaborationHub';
 import PatternLibrary from '@/components/PatternLibrary';
 import AnalyticsDashboard from '@/components/AnalyticsDashboard';
+import BoltBadge from '@/components/BoltBadge';
 
 const { width } = Dimensions.get('window');
 
@@ -218,9 +219,9 @@ export default function HomeScreen() {
           style={styles.heroSection}>
           <View style={styles.heroContent}>
             <Sparkles size={28} color="#FFFFFF" />
-            <Text style={styles.heroTitle}>AI-Powered Fashion Creation</Text>
+            <Text style={styles.heroTitle}>StyleZen - A SnapFit</Text>
             <Text style={styles.heroSubtitle}>
-              Design, visualize with 5D try-on, and manufacture custom clothing with verified partners
+              AI-powered fashion creation with 5D try-on and direct manufacturing
             </Text>
             <TouchableOpacity style={styles.heroButton}>
               <Text style={styles.heroButtonText}>Start Creating</Text>
@@ -423,7 +424,15 @@ export default function HomeScreen() {
             <ChevronRight size={20} color="#FFFFFF" />
           </LinearGradient>
         </TouchableOpacity>
+
+        {/* Bolt Badge - Footer Style */}
+        <View style={styles.footerSection}>
+          <BoltBadge variant="footer" size="medium" />
+        </View>
       </ScrollView>
+
+      {/* Floating Bolt Badge */}
+      <BoltBadge variant="floating" size="medium" />
 
       {/* Show Collaboration Hub as overlay */}
       {activeSection === 'collaboration' && (
@@ -931,5 +940,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     fontSize: 14,
     color: '#E5E7EB',
+  },
+  footerSection: {
+    paddingVertical: 32,
+    paddingHorizontal: 20,
+    alignItems: 'center',
   },
 });

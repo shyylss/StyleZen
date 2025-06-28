@@ -11,6 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { User, Settings, ShoppingBag, Heart, Bell, Shield, CircleHelp as HelpCircle, LogOut, Camera, CreditCard as Edit, Star, Package, Clock, ChevronRight, Award } from 'lucide-react-native';
+import BoltBadge from '@/components/BoltBadge';
 
 const orderHistory = [
   {
@@ -248,6 +249,11 @@ export default function ProfileScreen() {
               </TouchableOpacity>
             </LinearGradient>
           </View>
+        </View>
+
+        {/* Bolt Badge - Inline Style */}
+        <View style={styles.section}>
+          <BoltBadge variant="inline" size="medium" />
         </View>
 
         {/* Logout */}
@@ -565,7 +571,7 @@ const styles = StyleSheet.create({
   },
   aiButton: {
     backgroundColor: '#3B82F6',
-    paddingH: 16,
+    paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 8,
     alignItems: 'center',
